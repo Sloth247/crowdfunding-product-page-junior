@@ -1,0 +1,12 @@
+@mixin mq($breakpoint) {
+  @if $breakpoint == tablet {
+    @media screen and (min-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media screen and (min-width: 56.3em) {
+      @content;
+    }
+  }
+} ;

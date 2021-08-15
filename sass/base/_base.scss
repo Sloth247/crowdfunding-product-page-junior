@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+*:focus {
+  outline: 5px dashed orangered;
+  outline-offset: 4px;
+}
+
+body {
+  box-sizing: border-box;
+  min-height: 100vh;
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: $font-primary;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+img,
+picture {
+  width: 100%;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: black;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.wrapper {
+  padding: 0 5%;
+  @include mq(desktop) {
+    padding: 0 10%;
+  }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
