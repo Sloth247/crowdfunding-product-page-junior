@@ -1,0 +1,259 @@
+.main {
+  background-color: $color-grey-very-light;
+  display: grid;
+  place-content: center;
+  padding-bottom: 15%;
+
+  @include mq(desktop) {
+    padding-bottom: 10%;
+  }
+
+  &__inner-wrapper {
+    max-width: 730px;
+  }
+
+  &__project {
+    display: grid;
+    place-content: center;
+    grid-template-rows: repeat(3, minmax(min-content, max-content));
+    grid-template-columns: repeat(2, minmax(min-content, max-content));
+    padding: 10% 5%;
+    background-color: $color-white;
+    text-align: center;
+    position: relative;
+    transform: translateY(-4rem);
+    border-radius: 8px;
+
+    @include mq(desktop) {
+      display: block;
+      align-content: start;
+      paddding-top: 10%;
+    }
+
+    &-logo {
+      width: 3.5rem;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -50%);
+    }
+    &-title {
+      grid-row: 1/2;
+      grid-column: 1/-1;
+      margin-top: 5%;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      padding: 0 5%;
+
+      @include mq(desktop) {
+        margin-top: 0;
+        padding: 0;
+        font-size: 1.8rem;
+      }
+    }
+    &-description {
+      grid-row: 2/3;
+      grid-column: 1/-1;
+      line-height: 1.6;
+      font-weight: $font-weight-light;
+      margin-bottom: 1.5rem;
+      color: $color-grey-smoky;
+
+      @include mq(desktop) {
+        margin-bottom: 2rem;
+      }
+    }
+    &-btn-container {
+      grid-row: 3/4;
+      grid-column: 1/-1;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-bookmark {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & svg.checked circle {
+        fill: $color-primary-cyan-dark;
+      }
+      & svg.checked path {
+        fill: $color-white;
+      }
+
+      &-title {
+        display: none;
+        background-color: $color-grey-very-light;
+        color: $color-grey-smoky;
+        font-weight: $font-weight-bold;
+        padding: 1.2rem 2rem 1.2rem 3rem;
+        border-radius: 0 3.5rem 3.5rem 0;
+        &.checked {
+          color: $color-primary-cyan-dark;
+        }
+
+        @include mq(desktop) {
+          display: inline-block;
+        }
+      }
+      & svg {
+        @include mq(desktop) {
+          transform: translateX(2rem);
+        }
+      }
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &-data {
+      padding: 10% 5%;
+      background-color: $color-white;
+      @include mq(desktop) {
+        padding: 6% 5%;
+      }
+      &-container {
+        display: grid;
+        justify-content: center;
+        text-align: center;
+        border-radius: 8px;
+        color: $color-grey-smoky;
+
+        @include mq(desktop) {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(2, minmax(min-content, max-content));
+          grid-row-gap: 1.5rem;
+        }
+      }
+      &-fund,
+      &-backers,
+      &-days {
+        color: black;
+      }
+
+      &-item {
+        padding: 1.5rem;
+        display: grid;
+        gap: 0.5rem;
+        position: relative;
+
+        @include mq(desktop) {
+          padding: 1rem 1.5rem;
+          border-right: 1px solid $color-grey-very-light;
+          text-align: left;
+        }
+
+        &:nth-of-type(3) {
+          @include mq(desktop) {
+            border-right: none;
+          }
+        }
+
+        &::after {
+          content: "";
+          width: 5rem;
+          height: 1px;
+          background-color: $color-grey-very-light;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          @include mq(desktop) {
+            display: none;
+          }
+        }
+
+        & p:first-child {
+          font-size: 2rem;
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+
+    &-details {
+      margin-top: 1rem;
+      padding: 10% 7%;
+      background-color: $color-white;
+      text-align: left;
+      display: grid;
+      line-height: 1.6;
+      border-radius: 8px;
+      gap: 1rem;
+      color: $color-grey-smoky;
+
+      @include mq(desktop) {
+        gap: 1.5rem;
+      }
+
+      &-title {
+        text-align: left;
+        font-size: 1.3rem;
+      }
+
+      &-pledge {
+        text-align: left;
+        display: grid;
+        gap: 1rem;
+
+        @include mq(desktop) {
+          gap: 1.5rem;
+        }
+
+        &-title {
+          text-align: left;
+          font-size: 1.1rem;
+          font-weight: $font-weight-bold;
+        }
+        &-item {
+          border-radius: 8px;
+          border: 1px solid $color-grey-medium-light;
+          padding: 10% 5%;
+
+          &.disable-pledge {
+            opacity: 0.5;
+          }
+
+          @include mq(desktop) {
+            display: grid;
+            align-items: center;
+            grid-template-rows: repeat(4, minmax(min-content, max-content));
+            grid-template-columns: 65% 35%;
+            padding: 5%;
+          }
+        }
+        &-price {
+          color: $color-primary-cyan-light;
+          font-weight: $font-weight-middle;
+
+          @include mq(desktop) {
+            justify-self: end;
+          }
+        }
+        &-description {
+          margin: 2rem 0;
+          @include mq(desktop) {
+            grid-column: 1/-1;
+          }
+        }
+        &-amount-left {
+          display: flex;
+          align-items: center;
+          color: black;
+          & span {
+            font-size: 2rem;
+            font-weight: $font-weight-bold;
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+  &__progress-bar {
+    margin-top: 1rem;
+    @include mq(desktop) {
+      margin-top: 0;
+    }
+  }
+}
