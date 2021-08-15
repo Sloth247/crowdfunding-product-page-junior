@@ -1,0 +1,60 @@
+.main__success-modal {
+  background-color: $color-white;
+  border-radius: 8px;
+  padding: 10% 4%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  gap: 2rem;
+  position: fixed;
+  top: 20%;
+  left: 5%;
+  right: 5%;
+  z-index: 10;
+
+  @include mq(desktop) {
+    max-width: 600px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5% 4%;
+  }
+
+  &[aria-hidden="true"] {
+    display: none;
+  }
+
+  &-overlay {
+    height: 120%;
+    width: 100%;
+    background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.4));
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 10;
+
+    &[aria-hidden="true"] {
+      display: none;
+    }
+  }
+
+  &-title {
+    font-size: 1.3rem;
+    @include mq(desktop) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &-logo {
+    width: 4rem;
+    @include mq(desktop) {
+      width: 6rem;
+    }
+  }
+  &-description {
+    text-align: center;
+    line-height: 1.6;
+    color: $color-grey-smoky;
+  }
+}

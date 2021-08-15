@@ -1,0 +1,93 @@
+// Hamburger Mobile Menu Button //
+
+.header__mobile-menu-toggle {
+  & span {
+    width: 1.3rem;
+    height: 3px;
+    background-color: $color-white;
+    display: block;
+    position: relative;
+    z-index: 5;
+  }
+  & span::before,
+  & span::after {
+    content: "";
+    position: absolute;
+    width: 1.3rem;
+    height: 3px;
+    background-color: $color-white;
+    left: 0;
+    transition: transform 0.2s ease;
+  }
+  & span::before {
+    top: -8px;
+  }
+  & span::after {
+    top: 8px;
+  }
+
+  &.hamburger-close {
+    & span::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+    & span::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+    & span {
+      background-color: transparent;
+    }
+  }
+  @include mq(desktop) {
+    display: none;
+  }
+}
+
+.btn {
+  background-color: $color-primary-cyan-light;
+  color: $color-white;
+  border-radius: 3.5rem;
+  font-weight: $font-weight-middle;
+  font-family: inherit;
+  font-size: 1.1rem;
+  padding: 1rem 2.5rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $color-primary-cyan-dark;
+    transform: translateY(-0.1rem);
+  }
+
+  &:disabled {
+    background-color: $color-grey-very-light;
+  }
+}
+
+// Back this project Button //
+
+.main__back-btn {
+  width: 75%;
+  max-width: 15rem;
+}
+
+// select reward button
+
+.main__project-details-pledge-btn {
+  margin-top: 1rem;
+}
+
+.main__modal-continue-btn {
+  grid-row: 2/-1;
+  grid-column: 2/-1;
+  margin-right: 10%;
+
+  justify-self: center;
+
+  &:first-of-type {
+    @include mq(desktop) {
+      grid-column: 3/-1;
+      grid-row: 1/2;
+    }
+  }
+}
