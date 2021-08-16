@@ -2,7 +2,7 @@
   background-color: $color-grey-very-light;
   display: grid;
   place-content: center;
-  padding-bottom: 15%;
+  padding-bottom: 10%;
 
   @include mq(desktop) {
     padding-bottom: 10%;
@@ -10,6 +10,10 @@
 
   &__inner-wrapper {
     max-width: 730px;
+    transform: translateY(-4rem);
+    @include mq(desktop) {
+      transform: translateY(-6rem);
+    }
   }
 
   &__project {
@@ -21,13 +25,15 @@
     background-color: $color-white;
     text-align: center;
     position: relative;
-    transform: translateY(-4rem);
+    /* transform: translateY(-4rem); */
     border-radius: 8px;
+    margin-bottom: 1rem;
 
     @include mq(desktop) {
       display: block;
       align-content: start;
       paddding-top: 10%;
+      padding: 8% 5% 7% 5%;
     }
 
     &-logo {
@@ -49,6 +55,7 @@
         margin-top: 0;
         padding: 0;
         font-size: 1.8rem;
+        margin-bottom: 1rem;
       }
     }
     &-description {
@@ -131,6 +138,10 @@
       &-backers,
       &-days {
         color: black;
+        font-size: 2rem;
+        @include mq(desktop) {
+          text-align: left;
+        }
       }
 
       &-item {
@@ -151,7 +162,7 @@
           }
         }
 
-        &::after {
+        &:not(:last-child)::after {
           content: "";
           width: 5rem;
           height: 1px;
@@ -232,7 +243,7 @@
           }
         }
         &-description {
-          margin: 2rem 0;
+          margin: 1.5rem 0;
           @include mq(desktop) {
             grid-column: 1/-1;
           }

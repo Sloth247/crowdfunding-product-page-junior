@@ -9,7 +9,7 @@
 
   @include mq(desktop) {
     background-image: url(/images/image-hero-desktop.jpg);
-    min-height: 60vh;
+    min-height: 40vh;
   }
 
   &__nav {
