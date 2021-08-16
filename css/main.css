@@ -492,8 +492,8 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  position: fixed;
   z-index: 10;
+  position: fixed;
 }
 
 .main__modal-overlay[aria-hidden="true"] {
@@ -643,7 +643,7 @@ button {
   display: -ms-grid;
   display: grid;
   place-content: center;
-  padding-bottom: 15%;
+  padding-bottom: 10%;
 }
 
 @media screen and (min-width: 56.3em) {
@@ -654,6 +654,15 @@ button {
 
 .main__inner-wrapper {
   max-width: 730px;
+  -webkit-transform: translateY(-4rem);
+          transform: translateY(-4rem);
+}
+
+@media screen and (min-width: 56.3em) {
+  .main__inner-wrapper {
+    -webkit-transform: translateY(-6rem);
+            transform: translateY(-6rem);
+  }
 }
 
 .main__project {
@@ -670,9 +679,9 @@ button {
   background-color: white;
   text-align: center;
   position: relative;
-  -webkit-transform: translateY(-4rem);
-          transform: translateY(-4rem);
+  /* transform: translateY(-4rem); */
   border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 56.3em) {
@@ -682,6 +691,7 @@ button {
         -ms-flex-line-pack: start;
             align-content: start;
     paddding-top: 10%;
+    padding: 8% 5% 7% 5%;
   }
 }
 
@@ -710,6 +720,7 @@ button {
     margin-top: 0;
     padding: 0;
     font-size: 1.8rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -835,6 +846,13 @@ button {
 
 .main__project-data-fund, .main__project-data-backers, .main__project-data-days {
   color: black;
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 56.3em) {
+  .main__project-data-fund, .main__project-data-backers, .main__project-data-days {
+    text-align: left;
+  }
 }
 
 .main__project-data-item {
@@ -859,7 +877,7 @@ button {
   }
 }
 
-.main__project-data-item::after {
+.main__project-data-item:not(:last-child)::after {
   content: "";
   width: 5rem;
   height: 1px;
@@ -872,7 +890,7 @@ button {
 }
 
 @media screen and (min-width: 56.3em) {
-  .main__project-data-item::after {
+  .main__project-data-item:not(:last-child)::after {
     display: none;
   }
 }
@@ -965,7 +983,7 @@ button {
 }
 
 .main__project-details-pledge-description {
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 
 @media screen and (min-width: 56.3em) {
@@ -1016,7 +1034,7 @@ button {
 @media screen and (min-width: 56.3em) {
   .header {
     background-image: url(/images/image-hero-desktop.jpg);
-    min-height: 60vh;
+    min-height: 40vh;
   }
 }
 
